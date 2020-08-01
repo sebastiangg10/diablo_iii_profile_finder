@@ -3,7 +3,6 @@ import Vue from 'vue'
 
 // BootstrapVue
 import './plugins/BootstrapVue'
-
 // Vue Font-Awesome
 import './plugins/fontAwesome'
 
