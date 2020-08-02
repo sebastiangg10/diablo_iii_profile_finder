@@ -27,4 +27,38 @@ function getApiAccount ({ region, account }) {
   return get(API_URL)
 }
 
-export { getApiAccount }
+/**
+ * Returns a single hero
+ * GET – /d3/profile/{account}/hero/{heroId}
+ * @param region {String}
+ * @param account {String}
+ * @param heroId {String}
+ * @returns {Promise}
+ */
+function getApiHero ({ region, account, heroId }) {
+  const resource = `d3/profile/${account}/hero/${heroId}`
+  const locale = locales[region]
+  const accessToken = store.state.oauth.accessToken
+  const API_URL = `${protocol}${region}${host}${resource}/?locale=${locale}&access_token=${accessToken}`
+
+  return get(API_URL)
+}
+
+/**
+ * Returns a list of items for the specified hero.
+ * GET – /d3/profile/{account}/hero/{heroId}/items
+ * @param region {String}
+ * @param account {String}
+ * @param heroId {String}
+ * @returns {Promise}
+ */
+function getApiDetailedHeroItems ({ region, account, heroId }) {
+  const resource = `d3/profile/${account}/hero/${heroId}/items`
+  const locale = locales[region]
+  const accessToken = store.state.oauth.accessToken
+  const API_URL = `${protocol}${region}${host}${resource}/?locale=${locale}&access_token=${accessToken}`
+
+  return get(API_URL)
+}
+
+export { getApiAccount, getApiHero, getApiDetailedHeroItems }
