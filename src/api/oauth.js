@@ -1,8 +1,7 @@
 import { post } from 'axios'
 
-// !🔥 Estos datos deberían ser privados
-const clientId = 'a772ec6ae142484cbcfa66359d83f8ca'
-const clientSecret = 'kTQrE2RsATSbp6b867fo5X7OnjY4xxwj'
+const clientId = process.env.VUE_APP_CLIENT_ID
+const clientSecret = process.env.VUE_APP_CLIENT_SECRET
 
 // {"access_token":"US0ZulLMDjL47AkiAeiCzf54gDWrpTdFiN","token_type":"bearer","expires_in":86399}%
 
