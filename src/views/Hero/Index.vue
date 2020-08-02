@@ -8,6 +8,9 @@
       <!-- En 'lg' orden 2 -->
       <b-col md="12" lg="8" order-lg="2">
         <BaseLoading v-if="isLoadingItems"/>
+        <template v-if="hero">
+          <HeroItems v-if="items" :items="items"/>
+        </template>
       </b-col>
 
       <!-- 12 columnas de 'xs' -> 'md', 4 columnas desde 'lg' hacia arriba -->
@@ -29,7 +32,7 @@ import BaseLoading from '@/components/BaseLoading'
 import HeroDetailHeader from './HeroDetailHeader'
 import HeroAttributes from './HeroAttributes/Index'
 import HeroSkills from './HeroSkills/Index'
-// import HeroItems from './HeroItems/Index'
+import HeroItems from './HeroItems/Index'
 import { getApiHero, getApiDetailedHeroItems } from '@/api/search'
 
 export default {
@@ -39,7 +42,7 @@ export default {
     BaseLoading,
     HeroDetailHeader,
     HeroAttributes,
-    // HeroItems,
+    HeroItems,
     HeroSkills
   },
   data () {
